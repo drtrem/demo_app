@@ -2,18 +2,26 @@ require 'rails_helper'
 
 RSpec.describe "StaticPages", type: :request do
 
-  describe "GET /static_pages" do
-    it "works! (now write some real specs)" do
+  describe "Home page" do
+
+  	it "works! (now write some real specs)" do
       get static_pages_home_path
       expect(response).to have_http_status(200)
     end
-    it "should have the content 'StaticPages#home'" do
+
+    it "should have the content 'Sample App'" do
       visit '/static_pages/home'
-      expect(page).to have_content('StaticPages#home')
+      expect(page).to have_content('Sample App')
     end
-    it "should have the right title" do
+
+    it "should have the base title" do
       visit '/static_pages/home'
-      expect(page).to have_title("Ruby on Rails Tutorial Sample App | Home")
+      expect(page).to have_title("Ruby on Rails Tutorial Sample App")
+    end
+
+    it "should not have a custom page title" do
+      visit '/static_pages/home'
+      expect(page).not_to have_title('| Home')
     end
   end
 
