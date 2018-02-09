@@ -5,9 +5,7 @@ Rails.application.routes.draw do
   match '/contact', to: 'static_pages#contact', via: 'get'
   match '/signup',  to: 'users#new',            via: 'get'
 
-  resources :microposts
-  get 'users/new'
-
   resources :users
+  match '/signup',  to: 'users#new',            via: 'get'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
