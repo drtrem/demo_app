@@ -40,6 +40,8 @@ gem 'jbuilder', '~> 2.5'
 group :test do
   gem 'selenium-webdriver'
   gem 'capybara'
+  gem 'cucumber-rails'
+  gem 'database_cleaner'
 end
 
 group :development, :test do
