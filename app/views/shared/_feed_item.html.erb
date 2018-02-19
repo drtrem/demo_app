@@ -7,6 +7,6 @@
     <span class="timestamp">
       Posted <%= time_ago_in_words(feed_item.created_at) %> ago.
     </span>
-  <% provide(:objectt, feed_item) %>
+  <% provide(:object, feed_item) %>
   <%= render 'shared/delete_link' %>
 </li>
