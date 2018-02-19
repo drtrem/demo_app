@@ -191,6 +191,6 @@ RSpec.describe "UserPages", type: :request do
         it { should have_content(m2.content) }
         it { should have_content(user.microposts.count) }
       end
-  end
+    end
   end
 end

@@ -63,28 +63,41 @@ p {
   color: #fff;
   text-transform: uppercase;
   letter-spacing: -1px;
-  padding-top: 9px;
+  padding-top: 25px;
   font-weight: bold;
   line-height: 1;
+  padding-bottom: 24px;
 }
 
 #logo:hover {
   color: #fff;
   text-decoration: none;
+  padding-bottom: 24px;
 }
 
 .nav > li {
   float: right !important;
 }
 
+.nav > li > a {
+  color: #fff;
+}
+
+.nav > li > a:hover {
+  color: #000;
+  text-decoration: none;
+}
+
+
+.nav.pull-right {
+  margin-top: 15px;
+}
+
+
 /* footer */
 
 footer {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 80px;
+
 
   margin-top: 45px;
   padding-top: 5px;
@@ -97,7 +110,7 @@ footer a {
 }
 
 footer a:hover {
-  color: #222;
+  color: #fff;
 }
 
 footer small {
@@ -120,6 +133,10 @@ $grayMediumLight: #eaeaea;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+}
+
+.footer small {
+  margin-top: 33px;
 }
 
 

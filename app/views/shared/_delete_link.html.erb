@@ -1,0 +1,6 @@
+  <% if current_user?(yield(:object).user) %>
+    <%= link_to "delete", yield(:object), method: :delete,
+                                     data: { confirm: "You sure?" },
+                                     title: yield(:object).content %>
+  <% end %> 
+  

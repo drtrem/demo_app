@@ -40,5 +40,23 @@ RSpec.describe "MicropostPages", type: :request do
         end
       end
     end
+
+    describe "pagination micropost" do
+      before do 
+        50.times { FactoryGirl.create(:micropost, user: user) } 
+        visit root_path
+      end
+      after { User.delete_all }
+
+
+      it { should have_selector('div.pagination') }
+
+      it "should list each microposts" do
+        user.microposts.paginate(page: 1).each do |post|
+          expect(page).to have_selector('span', text: "Lorem ipsum")
+        end
+      end
+    end
   end
 end
+
