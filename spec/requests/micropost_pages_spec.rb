@@ -57,6 +57,20 @@ RSpec.describe "MicropostPages", type: :request do
         end
       end
     end
+
+    describe "test count symbol micropost)" do
+      it { should have_selector('span', text: 140) }
+    end
   end
+
+  describe "no view delete micropost links other" do
+    let(:user2) { FactoryGirl.create(:user) }
+    it { should_not have_link('delete') }
+
+    it do 
+      user_path user2
+      should_not have_link('delete') 
+    end
+  end 
 end
 
