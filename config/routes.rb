@@ -4,7 +4,15 @@ Rails.application.routes.draw do
   match '/about',   to: 'static_pages#about',   via: 'get'
   match '/contact', to: 'static_pages#contact', via: 'get'
 
-  resources :users
+  resources :users do
+    member do
+      get :following, :followers
+    end
+    collection do
+      get :tigers
+    end
+  end
+
   match '/signup',  to: 'users#new',            via: 'get'
 
   resources :sessions, only: [:new, :create, :destroy]
@@ -12,4 +20,5 @@ Rails.application.routes.draw do
   match '/signout', to: 'sessions#destroy',     via: 'delete'
 
   resources :microposts, only: [:create, :destroy]
+  resources :relationships, only: [:create, :destroy]
 end
