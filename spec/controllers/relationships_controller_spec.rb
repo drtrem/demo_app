@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "RelationshipsController", type: :controller do
+RSpec.describe "RelationshipsController", type: :controller, skip: true do
 
   let(:user) { FactoryGirl.create(:user) }
   let(:other_user) { FactoryGirl.create(:user) }
